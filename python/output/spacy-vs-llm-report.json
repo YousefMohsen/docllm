@@ -1,0 +1,1809 @@
+{
+  "input": "/Users/yomo/projects/docllm/python/output/spacy-entities-20260207-163729.json",
+  "filters": {
+    "dataset": "dataset-8",
+    "limitDiffs": 25
+  },
+  "filesInInput": 17,
+  "filesCompared": 17,
+  "entityLevel": {
+    "spacy": 177,
+    "llm": 42,
+    "overlap": 21
+  },
+  "entityLevelLoose": {
+    "spacy": 175,
+    "llm": 42,
+    "overlap": 24
+  },
+  "mentionLevel": {
+    "spacy": 282,
+    "llm": 47,
+    "overlap": 0
+  },
+  "byTypeEntity": {
+    "PERSON": {
+      "spacy": 72,
+      "llm": 23,
+      "overlap": 12
+    },
+    "ORGANIZATION": {
+      "spacy": 59,
+      "llm": 8,
+      "overlap": 3
+    },
+    "LOCATION": {
+      "spacy": 46,
+      "llm": 11,
+      "overlap": 6
+    }
+  },
+  "byTypeEntityLoose": {
+    "PERSON": {
+      "spacy": 70,
+      "llm": 23,
+      "overlap": 14
+    },
+    "ORGANIZATION": {
+      "spacy": 59,
+      "llm": 8,
+      "overlap": 3
+    },
+    "LOCATION": {
+      "spacy": 46,
+      "llm": 11,
+      "overlap": 7
+    }
+  },
+  "byTypeMention": {
+    "PERSON": {
+      "spacy": 109,
+      "llm": 27,
+      "overlap": 0
+    },
+    "ORGANIZATION": {
+      "spacy": 115,
+      "llm": 9,
+      "overlap": 0
+    },
+    "LOCATION": {
+      "spacy": 58,
+      "llm": 11,
+      "overlap": 0
+    }
+  },
+  "disagreementsSample": [
+    {
+      "file": {
+        "id": 81,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014114.pdf",
+        "filename": "EFTA00014114.pdf"
+      },
+      "onlySpacyEntity": [
+        "PERSON|jay lefkowitz",
+        "ORGANIZATION|usafls",
+        "PERSON|jeffrey",
+        "PERSON|jay lefkowitz \nsubject",
+        "PERSON|epstein"
+      ],
+      "onlyLlmEntity": [],
+      "onlySpacyMention": [
+        {
+          "key": "PERSON|jay lefkowitz|6",
+          "example": {
+            "text": "Jay Lefkowitz",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 6,
+            "endChar": 19,
+            "position": 6,
+            "normalizedText": "jay lefkowitz",
+            "context": "From: Jay Lefkowitz  \nTo: '   (USAFLS)\"  \nSubject: Re: \nDate: Mon, 17 Nov 2008 14:16:35 +0000 \nImportance: Normal \nI  w"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|31",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 31,
+            "endChar": 37,
+            "position": 31,
+            "normalizedText": "usafls",
+            "context": "From: Jay Lefkowitz  \nTo: '   (USAFLS)\"  \nSubject: Re: \nDate: Mon, 17 Nov 2008 14:16:35 +0000 \nImportance: Normal \nI  will be seeing jeff"
+          }
+        },
+        {
+          "key": "PERSON|jeffrey|133",
+          "example": {
+            "text": "jeffrey",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 133,
+            "endChar": 140,
+            "position": 133,
+            "normalizedText": "jeffrey",
+            "context": "AFLS)\"  \nSubject: Re: \nDate: Mon, 17 Nov 2008 14:16:35 +0000 \nImportance: Normal \nI  will be seeing jeffrey during my trip, and I can certainly update you on him and the various civil cases I am dealing with"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|340",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 340,
+            "endChar": 346,
+            "position": 340,
+            "normalizedText": "usafls",
+            "context": ". But primarily, I \nthought we could have a social visit. For once. \n--- Original Message \nFrom: \" (USAFLS)\" \nSent: 11/17/2008 08:55 AM EST \nTo: Jay Lefkowitz \nSubject: RE: \nHi Jay -- Sony. I have been mean"
+          }
+        },
+        {
+          "key": "PERSON|jay lefkowitz \nsubject|385",
+          "example": {
+            "text": "Jay Lefkowitz \nSubject",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 385,
+            "endChar": 407,
+            "position": 385,
+            "normalizedText": "jay lefkowitz \nsubject",
+            "context": "ocial visit. For once. \n--- Original Message \nFrom: \" (USAFLS)\" \nSent: 11/17/2008 08:55 AM EST \nTo: Jay Lefkowitz \nSubject: RE: \nHi Jay -- Sony. I have been meaning to get back to you. I  will be around both days. Do we ne"
+          }
+        }
+      ],
+      "onlyLlmMention": []
+    },
+    {
+      "file": {
+        "id": 82,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014116.pdf",
+        "filename": "EFTA00014116.pdf"
+      },
+      "onlySpacyEntity": [
+        "PERSON|acosta",
+        "PERSON|alex",
+        "ORGANIZATION|usafls",
+        "ORGANIZATION|brad edwards \ndate",
+        "ORGANIZATION|brad edwards"
+      ],
+      "onlyLlmEntity": [],
+      "onlySpacyMention": [
+        {
+          "key": "PERSON|acosta|7",
+          "example": {
+            "text": "Acosta",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 7,
+            "endChar": 13,
+            "position": 7,
+            "normalizedText": "acosta",
+            "context": "From: \"Acosta, Alex \n(USAFLS)\" alMIE> \nTo: \n' \n(USAFLS)\" \nCc: (USAFLS)\" \nalMIN> \nSubject: Re: Letter from Brad Ed"
+          }
+        },
+        {
+          "key": "PERSON|alex|15",
+          "example": {
+            "text": "Alex",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 15,
+            "endChar": 19,
+            "position": 15,
+            "normalizedText": "alex",
+            "context": "From: \"Acosta, Alex \n(USAFLS)\" alMIE> \nTo: \n' \n(USAFLS)\" \nCc: (USAFLS)\" \nalMIN> \nSubject: Re: Letter from Brad Edwards "
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|22",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 22,
+            "endChar": 28,
+            "position": 22,
+            "normalizedText": "usafls",
+            "context": "From: \"Acosta, Alex \n(USAFLS)\" alMIE> \nTo: \n' \n(USAFLS)\" \nCc: (USAFLS)\" \nalMIN> \nSubject: Re: Letter from Brad Edwards \nDate: Sa"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|48",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 48,
+            "endChar": 54,
+            "position": 48,
+            "normalizedText": "usafls",
+            "context": "From: \"Acosta, Alex \n(USAFLS)\" alMIE> \nTo: \n' \n(USAFLS)\" \nCc: (USAFLS)\" \nalMIN> \nSubject: Re: Letter from Brad Edwards \nDate: Sat, 02 Aug 2008 16:23:34 +0"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|63",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 63,
+            "endChar": 69,
+            "position": 63,
+            "normalizedText": "usafls",
+            "context": "From: \"Acosta, Alex \n(USAFLS)\" alMIE> \nTo: \n' \n(USAFLS)\" \nCc: (USAFLS)\" \nalMIN> \nSubject: Re: Letter from Brad Edwards \nDate: Sat, 02 Aug 2008 16:23:34 +0000 \nImportance"
+          }
+        }
+      ],
+      "onlyLlmMention": []
+    },
+    {
+      "file": {
+        "id": 83,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014117.pdf",
+        "filename": "EFTA00014117.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|usafls",
+        "LOCATION|roy black\nbcc",
+        "PERSON|jeffrey epstein",
+        "PERSON|roy",
+        "ORGANIZATION|non-prosecution agreement"
+      ],
+      "onlyLlmEntity": [],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|usafls|9",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 9,
+            "endChar": 15,
+            "position": 9,
+            "normalizedText": "usafls",
+            "context": "From: ' (USAFLS)\" \nTo: Roy BLACK\nBcc: ' \n(USAFLS)\" \nSubject: RE: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 18:31:56 +"
+          }
+        },
+        {
+          "key": "LOCATION|roy black\nbcc|23",
+          "example": {
+            "text": "Roy BLACK\nBcc",
+            "type": "LOCATION",
+            "spacyLabel": "FAC",
+            "startChar": 23,
+            "endChar": 36,
+            "position": 23,
+            "normalizedText": "roy black\nbcc",
+            "context": "From: ' (USAFLS)\" \nTo: Roy BLACK\nBcc: ' \n(USAFLS)\" \nSubject: RE: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 18:31:56 +0000 \nImportance: Nor"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|42",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 42,
+            "endChar": 48,
+            "position": 42,
+            "normalizedText": "usafls",
+            "context": "From: ' (USAFLS)\" \nTo: Roy BLACK\nBcc: ' \n(USAFLS)\" \nSubject: RE: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 18:31:56 +0000 \nImportance: Normal \nHi Roy "
+          }
+        },
+        {
+          "key": "PERSON|jeffrey epstein|65",
+          "example": {
+            "text": "Jeffrey Epstein",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 65,
+            "endChar": 80,
+            "position": 65,
+            "normalizedText": "jeffrey epstein",
+            "context": "From: ' (USAFLS)\" \nTo: Roy BLACK\nBcc: ' \n(USAFLS)\" \nSubject: RE: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 18:31:56 +0000 \nImportance: Normal \nHi Roy -- It relates to the performance"
+          }
+        },
+        {
+          "key": "PERSON|roy|144",
+          "example": {
+            "text": "Roy",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 144,
+            "endChar": 147,
+            "position": 144,
+            "normalizedText": "roy",
+            "context": "AFLS)\" \nSubject: RE: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 18:31:56 +0000 \nImportance: Normal \nHi Roy -- It relates to the performance of the criminal Non-Prosecution Agreement. \nAssistant U.S. Attorne"
+          }
+        }
+      ],
+      "onlyLlmMention": []
+    },
+    {
+      "file": {
+        "id": 84,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014118.pdf",
+        "filename": "EFTA00014118.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|state",
+        "PERSON|jeffrey epstein",
+        "ORGANIZATION|usafls",
+        "ORGANIZATION|sao",
+        "ORGANIZATION|the florida \npublic records act"
+      ],
+      "onlyLlmEntity": [],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|state|31",
+          "example": {
+            "text": "State",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 31,
+            "endChar": 36,
+            "position": 31,
+            "normalizedText": "state",
+            "context": "From \nTo: \nCc: ' \nSubject: RE: State v. Jeffrey Epstein \nDate: Wed, 17 Sep 2008 15:25:14 +0000 \nImportance: Normal \n(USAFLS)\" \nGiven the"
+          }
+        },
+        {
+          "key": "PERSON|jeffrey epstein|40",
+          "example": {
+            "text": "Jeffrey Epstein",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 40,
+            "endChar": 55,
+            "position": 40,
+            "normalizedText": "jeffrey epstein",
+            "context": "From \nTo: \nCc: ' \nSubject: RE: State v. Jeffrey Epstein \nDate: Wed, 17 Sep 2008 15:25:14 +0000 \nImportance: Normal \n(USAFLS)\" \nGiven the non-disclosure agr"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|117",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 117,
+            "endChar": 123,
+            "position": 117,
+            "normalizedText": "usafls",
+            "context": "\nSubject: RE: State v. Jeffrey Epstein \nDate: Wed, 17 Sep 2008 15:25:14 +0000 \nImportance: Normal \n(USAFLS)\" \nGiven the non-disclosure agreement, aren't we left with telling the SAO that we have agreed to n"
+          }
+        },
+        {
+          "key": "ORGANIZATION|sao|195",
+          "example": {
+            "text": "SAO",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 195,
+            "endChar": 198,
+            "position": 195,
+            "normalizedText": "sao",
+            "context": "\nImportance: Normal \n(USAFLS)\" \nGiven the non-disclosure agreement, aren't we left with telling the SAO that we have agreed to not disclose so it wouldn't \nbe proper for us to now agree that unsealing is"
+          }
+        },
+        {
+          "key": "ORGANIZATION|sao|333",
+          "example": {
+            "text": "SAO",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 333,
+            "endChar": 336,
+            "position": 333,
+            "normalizedText": "sao",
+            "context": "e so it wouldn't \nbe proper for us to now agree that unsealing is appropriate. Ultimately, it's the SAO's call because they will get the Florida \nPublic Records Act request and they were not a signatory "
+          }
+        }
+      ],
+      "onlyLlmMention": []
+    },
+    {
+      "file": {
+        "id": 85,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014120.pdf",
+        "filename": "EFTA00014120.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|usafls",
+        "ORGANIZATION|omg",
+        "PERSON|epstein",
+        "LOCATION|u.s."
+      ],
+      "onlyLlmEntity": [],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|usafls|7",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 7,
+            "endChar": 13,
+            "position": 7,
+            "normalizedText": "usafls",
+            "context": "From: (USAFLS)\"\nTo: ' (USAFLS)\" \nSubject: RE: Two things \nDate: Fri, 22 Aug 2008 16:11:10 +0000 \nImportance: Norm"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|23",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 23,
+            "endChar": 29,
+            "position": 23,
+            "normalizedText": "usafls",
+            "context": "From: (USAFLS)\"\nTo: ' (USAFLS)\" \nSubject: RE: Two things \nDate: Fri, 22 Aug 2008 16:11:10 +0000 \nImportance: Normal \nSure, have a"
+          }
+        },
+        {
+          "key": "ORGANIZATION|omg|162",
+          "example": {
+            "text": "OMG",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 162,
+            "endChar": 165,
+            "position": 162,
+            "normalizedText": "omg",
+            "context": ": Fri, 22 Aug 2008 16:11:10 +0000 \nImportance: Normal \nSure, have a  nice weekend. I saw the Order (OMG). \nSorry! \nFrom: \n(USAFLS) \nSent: Frida August 22, 2008 12:10 PM \nTo: (USAFLS) \nSubject: Two things"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|185",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 185,
+            "endChar": 191,
+            "position": 185,
+            "normalizedText": "usafls",
+            "context": "1:10 +0000 \nImportance: Normal \nSure, have a  nice weekend. I saw the Order (OMG). \nSorry! \nFrom: \n(USAFLS) \nSent: Frida August 22, 2008 12:10 PM \nTo: (USAFLS) \nSubject: Two things \nHi —  Can you keep your "
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|237",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 237,
+            "endChar": 243,
+            "position": 237,
+            "normalizedText": "usafls",
+            "context": "eekend. I saw the Order (OMG). \nSorry! \nFrom: \n(USAFLS) \nSent: Frida August 22, 2008 12:10 PM \nTo: (USAFLS) \nSubject: Two things \nHi —  Can you keep your eye out for any faxes for me from our Epstein friend"
+          }
+        }
+      ],
+      "onlyLlmMention": []
+    },
+    {
+      "file": {
+        "id": 86,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014121.pdf",
+        "filename": "EFTA00014121.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|usafls",
+        "LOCATION|13:59:10",
+        "PERSON|thu aug",
+        "LOCATION|u.s."
+      ],
+      "onlyLlmEntity": [
+        "PERSON|epstein"
+      ],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|usafls|7",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 7,
+            "endChar": 13,
+            "position": 7,
+            "normalizedText": "usafls",
+            "context": "From: (USAFLS)\" alMIN> \nTo: (USAFLS)\" alMIN> \nSubject: Re: Agreement \nDate: Thu, 14 Aug 2008 13:59:10 +0000 \nImpo"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|29",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 29,
+            "endChar": 35,
+            "position": 29,
+            "normalizedText": "usafls",
+            "context": "From: (USAFLS)\" alMIN> \nTo: (USAFLS)\" alMIN> \nSubject: Re: Agreement \nDate: Thu, 14 Aug 2008 13:59:10 +0000 \nImportance: Normal \nOk \n--"
+          }
+        },
+        {
+          "key": "LOCATION|13:59:10|93",
+          "example": {
+            "text": "13:59:10",
+            "type": "LOCATION",
+            "spacyLabel": "GPE",
+            "startChar": 93,
+            "endChar": 101,
+            "position": 93,
+            "normalizedText": "13:59:10",
+            "context": "From: (USAFLS)\" alMIN> \nTo: (USAFLS)\" alMIN> \nSubject: Re: Agreement \nDate: Thu, 14 Aug 2008 13:59:10 +0000 \nImportance: Normal \nOk \n--- Original Message \nFrom: (USAFLS) \nTo: (USAFLS) \nSent: Thu Aug 14"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|162",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 162,
+            "endChar": 168,
+            "position": 162,
+            "normalizedText": "usafls",
+            "context": "eement \nDate: Thu, 14 Aug 2008 13:59:10 +0000 \nImportance: Normal \nOk \n--- Original Message \nFrom: (USAFLS) \nTo: (USAFLS) \nSent: Thu Aug 14 09:58:36 2008 \nSubject: Agreement \nHi IM —  Just talked to and he "
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|176",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 176,
+            "endChar": 182,
+            "position": 176,
+            "normalizedText": "usafls",
+            "context": "Thu, 14 Aug 2008 13:59:10 +0000 \nImportance: Normal \nOk \n--- Original Message \nFrom: (USAFLS) \nTo: (USAFLS) \nSent: Thu Aug 14 09:58:36 2008 \nSubject: Agreement \nHi IM —  Just talked to and he disagrees with"
+          }
+        }
+      ],
+      "onlyLlmMention": [
+        {
+          "key": "PERSON|epstein|164",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "epstein",
+            "position": 164,
+            "entityText": "Epstein",
+            "contextSnippet": "ment \nDate: Thu, 14 Aug 2008 13:59:10 +0000 \nImportance: Normal \nOk \n--- Original Message \nFrom: (USAFLS) \nTo: (USAFLS) \nSent: Thu Aug 14 09:58:36 2008 \nSubject: Agreement \nHi IM —  Just talked to and he dis"
+          }
+        },
+        {
+          "key": "LOCATION|west palm beach|138",
+          "example": {
+            "type": "LOCATION",
+            "normalizedText": "west palm beach",
+            "position": 138,
+            "entityText": "West Palm Beach",
+            "contextSnippet": "alMIN> \nSubject: Re: Agreement \nDate: Thu, 14 Aug 2008 13:59:10 +0000 \nImportance: Normal \nOk \n--- Original Message \nFrom: (USAFLS) \nTo: (USAFLS) \nSent: Thu Aug 14 09:58:36 2008 \nSubject: Agreement \nHi IM —  Just ta"
+          }
+        }
+      ]
+    },
+    {
+      "file": {
+        "id": 87,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014122.pdf",
+        "filename": "EFTA00014122.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|non-compliance \ndate: sat",
+        "ORGANIZATION|non-compliance",
+        "PERSON|jack goldberger's",
+        "ORGANIZATION|usafls",
+        "ORGANIZATION|notice of non-compliance"
+      ],
+      "onlyLlmEntity": [
+        "PERSON|roy black",
+        "ORGANIZATION|usa()",
+        "LOCATION|southern district of florida"
+      ],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|non-compliance \ndate: sat|40",
+          "example": {
+            "text": "Non-Compliance \nDate: Sat",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 40,
+            "endChar": 65,
+            "position": 40,
+            "normalizedText": "non-compliance \ndate: sat",
+            "context": "From: \nTo: \nCc: \nSubject: Re: Notice of Non-Compliance \nDate: Sat, 28 Jun 2008 23:02:49 +0000 \nImportance: Normal \n--- Original Message ----\nFrom: USAFLS \nTo: \nSent:"
+          }
+        },
+        {
+          "key": "ORGANIZATION|non-compliance|215",
+          "example": {
+            "text": "Non-Compliance",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 215,
+            "endChar": 231,
+            "position": 215,
+            "normalizedText": "non-compliance",
+            "context": "--- Original Message ----\nFrom: USAFLS \nTo: \nSent: Sat Jun 28 17:14:01 2008 \nSubject: Fw: Notice of Non-Compliance \nJack Goldberger's response below. \n--- Original Message \nFrom: Jack Goldberger \nTo: USAFLS) \nSent: S"
+          }
+        },
+        {
+          "key": "PERSON|jack goldberger's|231",
+          "example": {
+            "text": "Jack Goldberger's",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 231,
+            "endChar": 248,
+            "position": 231,
+            "normalizedText": "jack goldberger's",
+            "context": "sage ----\nFrom: USAFLS \nTo: \nSent: Sat Jun 28 17:14:01 2008 \nSubject: Fw: Notice of Non-Compliance \nJack Goldberger's response below. \n--- Original Message \nFrom: Jack Goldberger \nTo: USAFLS) \nSent: Sat Jun 28 15:38:2"
+          }
+        },
+        {
+          "key": "PERSON|jack goldberger|294",
+          "example": {
+            "text": "Jack Goldberger",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 294,
+            "endChar": 309,
+            "position": 294,
+            "normalizedText": "jack goldberger",
+            "context": "bject: Fw: Notice of Non-Compliance \nJack Goldberger's response below. \n--- Original Message \nFrom: Jack Goldberger \nTo: USAFLS) \nSent: Sat Jun 28 15:38:23 2008 \nSubject: RE: Notice of Non-Compliance \nnot a problem."
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|315",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 315,
+            "endChar": 321,
+            "position": 315,
+            "normalizedText": "usafls",
+            "context": "Non-Compliance \nJack Goldberger's response below. \n--- Original Message \nFrom: Jack Goldberger \nTo: USAFLS) \nSent: Sat Jun 28 15:38:23 2008 \nSubject: RE: Notice of Non-Compliance \nnot a problem. \nFrom: \nSen"
+          }
+        }
+      ],
+      "onlyLlmMention": [
+        {
+          "key": "PERSON|jack goldberger|90",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "jack goldberger",
+            "position": 90,
+            "entityText": "Jack Goldberger",
+            "contextSnippet": "From: \nTo: \nCc: \nSubject: Re: Notice of Non-Compliance \nDate: Sat, 28 Jun 2008 23:02:49 +0000 \nImportance: Normal \n--- Original Message ----\nFrom: USAFLS \nTo: \nSent: Sat Jun 28 17:14:01 2008 \nSubject: Fw: "
+          }
+        },
+        {
+          "key": "PERSON|jack goldberger|145",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "jack goldberger",
+            "position": 145,
+            "entityText": "Jack Goldberger",
+            "contextSnippet": "ompliance \nDate: Sat, 28 Jun 2008 23:02:49 +0000 \nImportance: Normal \n--- Original Message ----\nFrom: USAFLS \nTo: \nSent: Sat Jun 28 17:14:01 2008 \nSubject: Fw: Notice of Non-Compliance \nJack Goldberger's response be"
+          }
+        },
+        {
+          "key": "PERSON|jack goldberger|290",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "jack goldberger",
+            "position": 290,
+            "entityText": "Jack Goldberger",
+            "contextSnippet": " \nSubject: Fw: Notice of Non-Compliance \nJack Goldberger's response below. \n--- Original Message \nFrom: Jack Goldberger \nTo: USAFLS) \nSent: Sat Jun 28 15:38:23 2008 \nSubject: RE: Notice of Non-Compliance \nnot a prob"
+          }
+        },
+        {
+          "key": "PERSON|roy black|370",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "roy black",
+            "position": 370,
+            "entityText": "Roy BLACK",
+            "contextSnippet": "Original Message \nFrom: Jack Goldberger \nTo: USAFLS) \nSent: Sat Jun 28 15:38:23 2008 \nSubject: RE: Notice of Non-Compliance \nnot a problem. \nFrom: \nSent: Sat 612812008 11:31 AM \nTo: Jack Goldberger \nCc: \nSubje"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usa()|305",
+          "example": {
+            "type": "ORGANIZATION",
+            "normalizedText": "usa()",
+            "position": 305,
+            "entityText": "USA()",
+            "contextSnippet": "Notice of Non-Compliance \nJack Goldberger's response below. \n--- Original Message \nFrom: Jack Goldberger \nTo: USAFLS) \nSent: Sat Jun 28 15:38:23 2008 \nSubject: RE: Notice of Non-Compliance \nnot a problem. "
+          }
+        }
+      ]
+    },
+    {
+      "file": {
+        "id": 88,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014124.pdf",
+        "filename": "EFTA00014124.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|roy black",
+        "ORGANIZATION|usafls",
+        "PERSON|roy",
+        "LOCATION|u.s.",
+        "LOCATION|west palm beach"
+      ],
+      "onlyLlmEntity": [
+        "PERSON|roy black",
+        "LOCATION|west palm beach, fl"
+      ],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|roy black|14",
+          "example": {
+            "text": "Roy BLACK",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 14,
+            "endChar": 23,
+            "position": 14,
+            "normalizedText": "roy black",
+            "context": "From: \n\"-\nTo: Roy BLACK <I \nBcc: \n\"-\nSubject: RE: Jeffrey Epstein \nDate: Tue, 12 Aug 2008 16:06:41 +0000 \nImportance: Norma"
+          }
+        },
+        {
+          "key": "PERSON|jeffrey epstein|50",
+          "example": {
+            "text": "Jeffrey Epstein",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 50,
+            "endChar": 65,
+            "position": 50,
+            "normalizedText": "jeffrey epstein",
+            "context": "From: \n\"-\nTo: Roy BLACK <I \nBcc: \n\"-\nSubject: RE: Jeffrey Epstein \nDate: Tue, 12 Aug 2008 16:06:41 +0000 \nImportance: Normal \n(USAFLS)\"  \n(USAFLS)\"  \nHi Roy -- Can y"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|127",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 127,
+            "endChar": 133,
+            "position": 127,
+            "normalizedText": "usafls",
+            "context": "\nBcc: \n\"-\nSubject: RE: Jeffrey Epstein \nDate: Tue, 12 Aug 2008 16:06:41 +0000 \nImportance: Normal \n(USAFLS)\"  \n(USAFLS)\"  \nHi Roy -- Can you give me a call? We need to discuss something. \nAssistant U.S. Att"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|139",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 139,
+            "endChar": 145,
+            "position": 139,
+            "normalizedText": "usafls",
+            "context": "bject: RE: Jeffrey Epstein \nDate: Tue, 12 Aug 2008 16:06:41 +0000 \nImportance: Normal \n(USAFLS)\"  \n(USAFLS)\"  \nHi Roy -- Can you give me a call? We need to discuss something. \nAssistant U.S. Attorney \nWest "
+          }
+        },
+        {
+          "key": "PERSON|roy|153",
+          "example": {
+            "text": "Roy",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 153,
+            "endChar": 156,
+            "position": 153,
+            "normalizedText": "roy",
+            "context": "frey Epstein \nDate: Tue, 12 Aug 2008 16:06:41 +0000 \nImportance: Normal \n(USAFLS)\"  \n(USAFLS)\"  \nHi Roy -- Can you give me a call? We need to discuss something. \nAssistant U.S. Attorney \nWest Palm Beach,"
+          }
+        }
+      ],
+      "onlyLlmMention": [
+        {
+          "key": "PERSON|roy black|56",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "roy black",
+            "position": 56,
+            "entityText": "Roy BLACK",
+            "contextSnippet": "From: \n\"-\nTo: Roy BLACK <I \nBcc: \n\"-\nSubject: RE: Jeffrey Epstein \nDate: Tue, 12 Aug 2008 16:06:41 +0000 \nImportance: Normal \n(USAFLS)\"  \n(USAFLS)\"  \nHi Roy -- Can y"
+          }
+        },
+        {
+          "key": "PERSON|jeffrey epstein|36",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "jeffrey epstein",
+            "position": 36,
+            "entityText": "Jeffrey Epstein",
+            "contextSnippet": "From: \n\"-\nTo: Roy BLACK <I \nBcc: \n\"-\nSubject: RE: Jeffrey Epstein \nDate: Tue, 12 Aug 2008 16:06:41 +0000 \nImportance: Normal \n(USAFLS)\"  \n(USAFLS)\"  \nH"
+          }
+        },
+        {
+          "key": "LOCATION|west palm beach, fl|78",
+          "example": {
+            "type": "LOCATION",
+            "normalizedText": "west palm beach, fl",
+            "position": 78,
+            "entityText": "West Palm Beach, FL",
+            "contextSnippet": "From: \n\"-\nTo: Roy BLACK <I \nBcc: \n\"-\nSubject: RE: Jeffrey Epstein \nDate: Tue, 12 Aug 2008 16:06:41 +0000 \nImportance: Normal \n(USAFLS)\"  \n(USAFLS)\"  \nHi Roy -- Can you give me a call? We need to di"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usao|370",
+          "example": {
+            "type": "ORGANIZATION",
+            "normalizedText": "usao",
+            "position": 370,
+            "entityText": "USAO",
+            "contextSnippet": " \nFax-\n----Original Message---\nFrom: Roy BLACK [mailto: \nSent: Monday, August 11, 2008 11:40 PM \nTo: (USAFLS) \nSubject: Jeffrey Epstein \n=: I  have conferred with the lawyers on the team. They all thank y"
+          }
+        }
+      ]
+    },
+    {
+      "file": {
+        "id": 89,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014125.pdf",
+        "filename": "EFTA00014125.pdf"
+      },
+      "onlySpacyEntity": [
+        "PERSON|2cde",
+        "ORGANIZATION|facsimile",
+        "LOCATION|miami",
+        "LOCATION|florida",
+        "LOCATION|u.s."
+      ],
+      "onlyLlmEntity": [
+        "PERSON|jeffrey epstein",
+        "ORGANIZATION|u.s. attorney's office",
+        "PERSON|jane doe #1",
+        "LOCATION|palm beach county",
+        "LOCATION|hollywood, florida"
+      ],
+      "onlySpacyMention": [
+        {
+          "key": "PERSON|2cde|4",
+          "example": {
+            "text": "2CDE",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 4,
+            "endChar": 8,
+            "position": 4,
+            "normalizedText": "2cde",
+            "context": "1. \n2CDE \n12:3C.'M \nLAW \nOFFICE-\n-\n/\nCl\n/a \n•   \n/\n( \ndate \ne \nwtt-) \nAND \nASSOCIATES \nAugust \nI, \n2008 \nAUS"
+          }
+        },
+        {
+          "key": "ORGANIZATION|facsimile|116",
+          "example": {
+            "text": "FACSIMILE",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 116,
+            "endChar": 125,
+            "position": 116,
+            "normalizedText": "facsimile",
+            "context": "'M \nLAW \nOFFICE-\n-\n/\nCl\n/a \n•   \n/\n( \ndate \ne \nwtt-) \nAND \nASSOCIATES \nAugust \nI, \n2008 \nAUSA \nVIA \nFACSIMILE \nnited \nStates \nAttorney's \nOffice \nMiami, \nFlorida \n33132 \nDear \nMr. \ns \nI \nhave \nreceived \nyour \n"
+          }
+        },
+        {
+          "key": "LOCATION|miami|162",
+          "example": {
+            "text": "Miami",
+            "type": "LOCATION",
+            "spacyLabel": "GPE",
+            "startChar": 162,
+            "endChar": 167,
+            "position": 162,
+            "normalizedText": "miami",
+            "context": "\nwtt-) \nAND \nASSOCIATES \nAugust \nI, \n2008 \nAUSA \nVIA \nFACSIMILE \nnited \nStates \nAttorney's \nOffice \nMiami, \nFlorida \n33132 \nDear \nMr. \ns \nI \nhave \nreceived \nyour \nJuly \n25, \n2008 \nletter \nindicating \na \nch"
+          }
+        },
+        {
+          "key": "LOCATION|florida|170",
+          "example": {
+            "text": "Florida",
+            "type": "LOCATION",
+            "spacyLabel": "GPE",
+            "startChar": 170,
+            "endChar": 177,
+            "position": 170,
+            "normalizedText": "florida",
+            "context": "AND \nASSOCIATES \nAugust \nI, \n2008 \nAUSA \nVIA \nFACSIMILE \nnited \nStates \nAttorney's \nOffice \nMiami, \nFlorida \n33132 \nDear \nMr. \ns \nI \nhave \nreceived \nyour \nJuly \n25, \n2008 \nletter \nindicating \na \nchange \nof \n"
+          }
+        },
+        {
+          "key": "LOCATION|u.s.|294",
+          "example": {
+            "text": "U.S.",
+            "type": "LOCATION",
+            "spacyLabel": "GPE",
+            "startChar": 294,
+            "endChar": 298,
+            "position": 294,
+            "normalizedText": "u.s.",
+            "context": ". \ns \nI \nhave \nreceived \nyour \nJuly \n25, \n2008 \nletter \nindicating \na \nchange \nof \ncourse \nby \nthe \nU.S. \nAttorney's \nOffice \nand \nan \napparent \ndecision \nnot \nto \nattempt \nto \nwork \nout \nthe \nundisputed "
+          }
+        }
+      ],
+      "onlyLlmMention": [
+        {
+          "key": "PERSON|jeffrey epstein|292",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "jeffrey epstein",
+            "position": 292,
+            "entityText": "Jeffrey Epstein",
+            "contextSnippet": "Mr. \ns \nI \nhave \nreceived \nyour \nJuly \n25, \n2008 \nletter \nindicating \na \nchange \nof \ncourse \nby \nthe \nU.S. \nAttorney's \nOffice \nand \nan \napparent \ndecision \nnot \nto \nattempt \nto \nwork \nout \nthe \nundisputed \nfacts \ni"
+          }
+        },
+        {
+          "key": "PERSON|jeffrey epstein|364",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "jeffrey epstein",
+            "position": 364,
+            "entityText": "Jeffrey Epstein",
+            "contextSnippet": "\nchange \nof \ncourse \nby \nthe \nU.S. \nAttorney's \nOffice \nand \nan \napparent \ndecision \nnot \nto \nattempt \nto \nwork \nout \nthe \nundisputed \nfacts \nin \nthis \ncase. \nIf \nyou \nwould \nlike \n:o \ncontinue \ntrying \nto \nwork \nou"
+          }
+        },
+        {
+          "key": "PERSON|jeffrey epstein|487",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "jeffrey epstein",
+            "position": 487,
+            "entityText": "Jeffrey Epstein",
+            "contextSnippet": "undisputed \nfacts \nin \nthis \ncase. \nIf \nyou \nwould \nlike \n:o \ncontinue \ntrying \nto \nwork \nout \nthe \nagreed \nfacts \nthen, \nof \ncourse, \nwe \nare \nwilling \nto \ncontinue \nto \nwork \nwith \nyou \ntowards \nthat \ngoal. \nIf, \n"
+          }
+        },
+        {
+          "key": "ORGANIZATION|u.s. attorney's office|511",
+          "example": {
+            "type": "ORGANIZATION",
+            "normalizedText": "u.s. attorney's office",
+            "position": 511,
+            "entityText": "U.S. Attorney's Office",
+            "contextSnippet": "his \ncase. \nIf \nyou \nwould \nlike \n:o \ncontinue \ntrying \nto \nwork \nout \nthe \nagreed \nfacts \nthen, \nof \ncourse, \nwe \nare \nwilling \nto \ncontinue \nto \nwork \nwith \nyou \ntowards \nthat \ngoal. \nIf, \nas \nyou \nsuggested, \nthat \nwoul"
+          }
+        },
+        {
+          "key": "ORGANIZATION|u.s. attorney's office|617",
+          "example": {
+            "type": "ORGANIZATION",
+            "normalizedText": "u.s. attorney's office",
+            "position": 617,
+            "entityText": "U.S. Attorney's Office",
+            "contextSnippet": "se, \nwe \nare \nwilling \nto \ncontinue \nto \nwork \nwith \nyou \ntowards \nthat \ngoal. \nIf, \nas \nyou \nsuggested, \nthat \nwould \nbe \nunproductive \ngiven \nthe \nlimited \nissues \nthe \nCourt \nneeds \nto \ndecide, \nthen \nplease \nconsider \n"
+          }
+        }
+      ]
+    },
+    {
+      "file": {
+        "id": 90,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014127.pdf",
+        "filename": "EFTA00014127.pdf"
+      },
+      "onlySpacyEntity": [
+        "LOCATION|roy black",
+        "ORGANIZATION|usafls",
+        "LOCATION|u.s.",
+        "PERSON|suite"
+      ],
+      "onlyLlmEntity": [
+        "PERSON|roy black"
+      ],
+      "onlySpacyMention": [
+        {
+          "key": "LOCATION|roy black|6",
+          "example": {
+            "text": "Roy BLACK",
+            "type": "LOCATION",
+            "spacyLabel": "FAC",
+            "startChar": 6,
+            "endChar": 15,
+            "position": 6,
+            "normalizedText": "roy black",
+            "context": "From: Roy BLACK\nTo: (USAFLS)\" \nSubject: Re: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 17:17:54 +0000 \nImportance: Nor"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|21",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 21,
+            "endChar": 27,
+            "position": 21,
+            "normalizedText": "usafls",
+            "context": "From: Roy BLACK\nTo: (USAFLS)\" \nSubject: Re: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 17:17:54 +0000 \nImportance: Normal \nI am ou"
+          }
+        },
+        {
+          "key": "PERSON|jeffrey epstein|44",
+          "example": {
+            "text": "Jeffrey Epstein",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 44,
+            "endChar": 59,
+            "position": 44,
+            "normalizedText": "jeffrey epstein",
+            "context": "From: Roy BLACK\nTo: (USAFLS)\" \nSubject: Re: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 17:17:54 +0000 \nImportance: Normal \nI am out of town. What is it about? \n>»"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|162",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 162,
+            "endChar": 168,
+            "position": 162,
+            "normalizedText": "usafls",
+            "context": "ate: Wed, 30 Jul 2008 17:17:54 +0000 \nImportance: Normal \nI am out of town. What is it about? \n>» \n(USAFLS)\"\n07/30/08 11:44 \nAM >» \nDear Roy: Are you available this afternoon to discuss the Epstein \nmatter?"
+          }
+        },
+        {
+          "key": "LOCATION|u.s.|341",
+          "example": {
+            "text": "U.S.",
+            "type": "LOCATION",
+            "spacyLabel": "GPE",
+            "startChar": 341,
+            "endChar": 345,
+            "position": 341,
+            "normalizedText": "u.s.",
+            "context": "iscuss the Epstein \nmatter? Please let me know what time works best for you. \nThank you. \nAssistant U.S. Attorney \n500 S. Australian Ave, Suite 400 \nWest Palm Beach, FL 33401 \nPhone \nFax \nEFTA00014127"
+          }
+        }
+      ],
+      "onlyLlmMention": [
+        {
+          "key": "PERSON|roy black|5",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "roy black",
+            "position": 5,
+            "entityText": "Roy BLACK",
+            "contextSnippet": "From: Roy BLACK\nTo: (USAFLS)\" \nSubject: Re: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 17:17:54 +0000 \nImportance: No"
+          }
+        },
+        {
+          "key": "PERSON|jeffrey epstein|36",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "jeffrey epstein",
+            "position": 36,
+            "entityText": "Jeffrey Epstein",
+            "contextSnippet": "From: Roy BLACK\nTo: (USAFLS)\" \nSubject: Re: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 17:17:54 +0000 \nImportance: Normal \nI am out of town. What is it ab"
+          }
+        },
+        {
+          "key": "LOCATION|west palm beach|90",
+          "example": {
+            "type": "LOCATION",
+            "normalizedText": "west palm beach",
+            "position": 90,
+            "entityText": "West Palm Beach",
+            "contextSnippet": "From: Roy BLACK\nTo: (USAFLS)\" \nSubject: Re: Jeffrey Epstein \nDate: Wed, 30 Jul 2008 17:17:54 +0000 \nImportance: Normal \nI am out of town. What is it about? \n>» \n(USAFLS)\"\n07/30/08 11:44 \nAM >» \nDear Roy: A"
+          }
+        }
+      ]
+    },
+    {
+      "file": {
+        "id": 91,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014128.pdf",
+        "filename": "EFTA00014128.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|usafls",
+        "PERSON|amy",
+        "PERSON|kathy",
+        "LOCATION|u.s.",
+        "PERSON|suite"
+      ],
+      "onlyLlmEntity": [
+        "PERSON|amy eden",
+        "PERSON|epstein"
+      ],
+      "onlySpacyMention": [
+        {
+          "key": "PERSON|catherine w. ezell|8",
+          "example": {
+            "text": "CATHERINE W. EZELL",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 8,
+            "endChar": 26,
+            "position": 8,
+            "normalizedText": "catherine w. ezell",
+            "context": "From: \"[CATHERINE W. EZELL\" <1 \nTo: (USAFLS)\" \n<1 \nSubject: RE: \nDate: Mon, 29 Dec 2008 23:11:12 +0000 \nI m p or ta \nnce: Norm"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|37",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 37,
+            "endChar": 43,
+            "position": 37,
+            "normalizedText": "usafls",
+            "context": "From: \"[CATHERINE W. EZELL\" <1 \nTo: (USAFLS)\" \n<1 \nSubject: RE: \nDate: Mon, 29 Dec 2008 23:11:12 +0000 \nI m p or ta \nnce: Normal \nThanks. \nFrom"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|147",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 147,
+            "endChar": 153,
+            "position": 147,
+            "normalizedText": "usafls",
+            "context": "<1 \nSubject: RE: \nDate: Mon, 29 Dec 2008 23:11:12 +0000 \nI m p or ta \nnce: Normal \nThanks. \nFrom: \n(USAFLS) [mailto \nSent: \nMonday, December 29, 2008 5:05 PM \nTo: \nKATHERINE W. EZELL \nCc: Amy \nEden \nSubject"
+          }
+        },
+        {
+          "key": "PERSON|katherine w. ezell|211",
+          "example": {
+            "text": "KATHERINE W. EZELL",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 211,
+            "endChar": 231,
+            "position": 211,
+            "normalizedText": "katherine w. ezell",
+            "context": "r ta \nnce: Normal \nThanks. \nFrom: \n(USAFLS) [mailto \nSent: \nMonday, December 29, 2008 5:05 PM \nTo: \nKATHERINE W. EZELL \nCc: Amy \nEden \nSubject: \nRE: \nHi Kathy and Amy —  I  hope all is well with you. I see from the paper"
+          }
+        },
+        {
+          "key": "PERSON|amy|235",
+          "example": {
+            "text": "Amy",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 235,
+            "endChar": 238,
+            "position": 235,
+            "normalizedText": "amy",
+            "context": "s. \nFrom: \n(USAFLS) [mailto \nSent: \nMonday, December 29, 2008 5:05 PM \nTo: \nKATHERINE W. EZELL \nCc: Amy \nEden \nSubject: \nRE: \nHi Kathy and Amy —  I  hope all is well with you. I see from the paper that y"
+          }
+        }
+      ],
+      "onlyLlmMention": [
+        {
+          "key": "PERSON|catherine w. ezell|10",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "catherine w. ezell",
+            "position": 10,
+            "entityText": "CATHERINE W. EZELL",
+            "contextSnippet": "From: \"[CATHERINE W. EZELL\" <1 \nTo: (USAFLS)\" \n<1 \nSubject: RE: \nDate: Mon, 29 Dec 2008 23:11:12 +0000 \nI m p or ta \nnce: Normal"
+          }
+        },
+        {
+          "key": "PERSON|katherine w. ezell|145",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "katherine w. ezell",
+            "position": 145,
+            "entityText": "KATHERINE W. EZELL",
+            "contextSnippet": " \n<1 \nSubject: RE: \nDate: Mon, 29 Dec 2008 23:11:12 +0000 \nI m p or ta \nnce: Normal \nThanks. \nFrom: \n(USAFLS) [mailto \nSent: \nMonday, December 29, 2008 5:05 PM \nTo: \nKATHERINE W. EZELL \nCc: Amy \nEden \nSubject: \nRE: \nHi"
+          }
+        },
+        {
+          "key": "PERSON|amy eden|164",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "amy eden",
+            "position": 164,
+            "entityText": "Amy Eden",
+            "contextSnippet": "\nDate: Mon, 29 Dec 2008 23:11:12 +0000 \nI m p or ta \nnce: Normal \nThanks. \nFrom: \n(USAFLS) [mailto \nSent: \nMonday, December 29, 2008 5:05 PM \nTo: \nKATHERINE W. EZELL \nCc: Amy \nEden \nSubject: \nRE: \nHi Kathy an"
+          }
+        },
+        {
+          "key": "PERSON|epstein|232",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "epstein",
+            "position": 232,
+            "entityText": "Epstein",
+            "contextSnippet": "anks. \nFrom: \n(USAFLS) [mailto \nSent: \nMonday, December 29, 2008 5:05 PM \nTo: \nKATHERINE W. EZELL \nCc: Amy \nEden \nSubject: \nRE: \nHi Kathy and Amy —  I  hope all is well with you. I see from the paper that yo"
+          }
+        },
+        {
+          "key": "ORGANIZATION|pbso|232",
+          "example": {
+            "type": "ORGANIZATION",
+            "normalizedText": "pbso",
+            "position": 232,
+            "entityText": "PBSO",
+            "contextSnippet": "anks. \nFrom: \n(USAFLS) [mailto \nSent: \nMonday, December 29, 2008 5:05 PM \nTo: \nKATHERINE W. EZELL \nCc: Amy \nEden \nSubject: \nRE: \nHi Kathy and Amy —  I  hope all is well with you. I see from the paper that"
+          }
+        }
+      ]
+    },
+    {
+      "file": {
+        "id": 92,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014129.pdf",
+        "filename": "EFTA00014129.pdf"
+      },
+      "onlySpacyEntity": [
+        "PERSON|messa",
+        "PERSON|epstein"
+      ],
+      "onlyLlmEntity": [],
+      "onlySpacyMention": [
+        {
+          "key": "PERSON|messa|183",
+          "example": {
+            "text": "Messa",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 183,
+            "endChar": 188,
+            "position": 183,
+            "normalizedText": "messa",
+            "context": ":32:28 +0000 \nImportance: Normal \nM\ns not in yet. We'll discuss as soon as he gets here. \n Ori inal Messa e \nFrom: \nSent: 't  e nes ay, ecem er I   , _ : AM \nTo: \nCc: \nSubject: Letter re Epstein work relea"
+          }
+        },
+        {
+          "key": "PERSON|epstein|321",
+          "example": {
+            "text": "Epstein",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 321,
+            "endChar": 328,
+            "position": 321,
+            "normalizedText": "epstein",
+            "context": "em er I   , _ : AM \nTo: \nCc: \nSubject: Letter re Epstein work release \nHi guys. Any comments on the Epstein work release letter? _is all ready to hand deliver it. Thanks. \nEFTA00014129"
+          }
+        }
+      ],
+      "onlyLlmMention": []
+    },
+    {
+      "file": {
+        "id": 93,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014130.pdf",
+        "filename": "EFTA00014130.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|usafls",
+        "PERSON|danchuk",
+        "ORGANIZATION|the non-prosecution agreement",
+        "ORGANIZATION|the protective order",
+        "ORGANIZATION|ms."
+      ],
+      "onlyLlmEntity": [
+        "ORGANIZATION|u.s. attorney"
+      ],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|usafls|18",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 18,
+            "endChar": 24,
+            "position": 18,
+            "normalizedText": "usafls",
+            "context": "From: \" \nTo: \" . (USAFLS)\" \nSubject: Re: CONFIDENTIAL: Epstein NonProsecution Agrmt w Addendum.pdf \nDate: Fri, 05 Dec 2008 0"
+          }
+        },
+        {
+          "key": "PERSON|michael danchuk|206",
+          "example": {
+            "text": "Michael Danchuk",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 206,
+            "endChar": 221,
+            "position": 206,
+            "normalizedText": "michael danchuk",
+            "context": "Fri, 05 Dec 2008 03:14:04 +0000 \nImportance: Normal \nThank you and I will pass on your greeting to \nMichael Danchuk \nn \nIn a message dated 12/4/2008 6:15:36 P.M. Eastern Standard Time, writes: \nDear Mr. Danchuk: I h"
+          }
+        },
+        {
+          "key": "PERSON|danchuk|309",
+          "example": {
+            "text": "Danchuk",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 309,
+            "endChar": 316,
+            "position": 309,
+            "normalizedText": "danchuk",
+            "context": "hael Danchuk \nn \nIn a message dated 12/4/2008 6:15:36 P.M. Eastern Standard Time, writes: \nDear Mr. Danchuk: I have attached the Non-Prosecution Agreement. Please restrict its disclosure only to those who ha"
+          }
+        },
+        {
+          "key": "ORGANIZATION|the non-prosecution agreement|334",
+          "example": {
+            "text": "the Non-Prosecution Agreement",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 334,
+            "endChar": 363,
+            "position": 334,
+            "normalizedText": "the non-prosecution agreement",
+            "context": "sage dated 12/4/2008 6:15:36 P.M. Eastern Standard Time, writes: \nDear Mr. Danchuk: I have attached the Non-Prosecution Agreement. Please restrict its disclosure only to those who have reviewed and \nsigned the Protective Order. I"
+          }
+        },
+        {
+          "key": "ORGANIZATION|the protective order|440",
+          "example": {
+            "text": "the Protective Order",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 440,
+            "endChar": 460,
+            "position": 440,
+            "normalizedText": "the protective order",
+            "context": "n-Prosecution Agreement. Please restrict its disclosure only to those who have reviewed and \nsigned the Protective Order. If any other staff members or attorneys need to see this document, please have them review and sig"
+          }
+        }
+      ],
+      "onlyLlmMention": [
+        {
+          "key": "PERSON|michael danchuk|85",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "michael danchuk",
+            "position": 85,
+            "entityText": "Michael Danchuk",
+            "contextSnippet": "From: \" \nTo: \" . (USAFLS)\" \nSubject: Re: CONFIDENTIAL: Epstein NonProsecution Agrmt w Addendum.pdf \nDate: Fri, 05 Dec 2008 03:14:04 +0000 \nImportance: Normal \nThank you and I will pass on your greetin"
+          }
+        },
+        {
+          "key": "LOCATION|west palm beach|157",
+          "example": {
+            "type": "LOCATION",
+            "normalizedText": "west palm beach",
+            "position": 157,
+            "entityText": "West Palm Beach",
+            "contextSnippet": "stein NonProsecution Agrmt w Addendum.pdf \nDate: Fri, 05 Dec 2008 03:14:04 +0000 \nImportance: Normal \nThank you and I will pass on your greeting to \nMichael Danchuk \nn \nIn a message dated 12/4/2008 6:15:36 P.M. East"
+          }
+        },
+        {
+          "key": "ORGANIZATION|u.s. attorney|145",
+          "example": {
+            "type": "ORGANIZATION",
+            "normalizedText": "u.s. attorney",
+            "position": 145,
+            "entityText": "U.S. Attorney",
+            "contextSnippet": "IDENTIAL: Epstein NonProsecution Agrmt w Addendum.pdf \nDate: Fri, 05 Dec 2008 03:14:04 +0000 \nImportance: Normal \nThank you and I will pass on your greeting to \nMichael Danchuk \nn \nIn a message dated 12/4/2008 6:1"
+          }
+        }
+      ]
+    },
+    {
+      "file": {
+        "id": 94,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014131.pdf",
+        "filename": "EFTA00014131.pdf"
+      },
+      "onlySpacyEntity": [
+        "PERSON|blackberry",
+        "ORGANIZATION|office",
+        "PERSON|epstein",
+        "ORGANIZATION|non-prosecution agreement",
+        "ORGANIZATION|the non-prosecution agreement"
+      ],
+      "onlyLlmEntity": [
+        "PERSON|mr. epstein"
+      ],
+      "onlySpacyMention": [
+        {
+          "key": "PERSON|edwards|54",
+          "example": {
+            "text": "Edwards",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 54,
+            "endChar": 61,
+            "position": 54,
+            "normalizedText": "edwards",
+            "context": "From: \nTo: \nCc: \nBcc• \nSubject: Fw: Draft Response to Edwards' Oct 15, 2008 letter \nDate: Wed, 05 Nov 2008 19:19:30 +0000 \nImportance: Normal \nWhat do you all th"
+          }
+        },
+        {
+          "key": "PERSON|edwards|242",
+          "example": {
+            "text": "Edwards",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 242,
+            "endChar": 249,
+            "position": 242,
+            "normalizedText": "edwards",
+            "context": "\nWhat do you all think? \nFrom: \nTo: \nSent: Wed Nov 05 14:08:17 2008 \nSubject: RE: Draft Response to Edwards' Oct 15, 2008 letter \nI am not averse to completely ignoring Edwards' October 15, 2008 letter, if t"
+          }
+        },
+        {
+          "key": "PERSON|edwards|311",
+          "example": {
+            "text": "Edwards",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 311,
+            "endChar": 318,
+            "position": 311,
+            "normalizedText": "edwards",
+            "context": "Subject: RE: Draft Response to Edwards' Oct 15, 2008 letter \nI am not averse to completely ignoring Edwards' October 15, 2008 letter, if that is what you would prefer. \nFrom: \nSent: Wednesday, November 05, 2"
+          }
+        },
+        {
+          "key": "PERSON|blackberry|561",
+          "example": {
+            "text": "Blackberry",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 561,
+            "endChar": 571,
+            "position": 561,
+            "normalizedText": "blackberry",
+            "context": "Response to Oct 15, 2008 letter \nHi I am out of the office today so I can't edit the letter from my Blackberry. I hate the idea of writing yet another \nletter that will be attached to a pleading or quoted in th"
+          }
+        },
+        {
+          "key": "ORGANIZATION|office|769",
+          "example": {
+            "text": "Office",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 769,
+            "endChar": 775,
+            "position": 769,
+            "normalizedText": "office",
+            "context": "the paper. \nI would feel more comfortable with something that says: \nThank you for your letter. The Office is involved in the criminal investigation of Mr. Epstein and is neither a party to nor \ninvolved in"
+          }
+        }
+      ],
+      "onlyLlmMention": [
+        {
+          "key": "PERSON|edwards|103",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "edwards",
+            "position": 103,
+            "entityText": "Edwards",
+            "contextSnippet": "m: \nTo: \nCc: \nBcc• \nSubject: Fw: Draft Response to Edwards' Oct 15, 2008 letter \nDate: Wed, 05 Nov 2008 19:19:30 +0000 \nImportance: Normal \nWhat do you all think? \nFrom: \nTo: \nSent: Wed Nov 05 14:08:17 2008 "
+          }
+        },
+        {
+          "key": "PERSON|mr. epstein|174",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "mr. epstein",
+            "position": 174,
+            "entityText": "Mr. Epstein",
+            "contextSnippet": "8 letter \nDate: Wed, 05 Nov 2008 19:19:30 +0000 \nImportance: Normal \nWhat do you all think? \nFrom: \nTo: \nSent: Wed Nov 05 14:08:17 2008 \nSubject: RE: Draft Response to Edwards' Oct 15, 2008 letter \nI am not aver"
+          }
+        }
+      ]
+    },
+    {
+      "file": {
+        "id": 95,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014133.pdf",
+        "filename": "EFTA00014133.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|usafls",
+        "PERSON|paul cassell  >",
+        "PERSON|brad \nedwards",
+        "PERSON|cassell",
+        "PERSON|brad"
+      ],
+      "onlyLlmEntity": [
+        "PERSON|brad edwards",
+        "PERSON|judge cassell",
+        "ORGANIZATION|s. j. quinney college of law",
+        "ORGANIZATION|university of utah",
+        "LOCATION|ut"
+      ],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|usafls|7",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 7,
+            "endChar": 13,
+            "position": 7,
+            "normalizedText": "usafls",
+            "context": "From: (USAFLS)\"  \nTo: Paul Cassell  >, Brad \nEdwards < \nCc: '   (USAFLS)\" < \nSubject: RE: Draft Protective Order "
+          }
+        },
+        {
+          "key": "PERSON|paul cassell  >|22",
+          "example": {
+            "text": "Paul Cassell  >",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 22,
+            "endChar": 37,
+            "position": 22,
+            "normalizedText": "paul cassell  >",
+            "context": "From: (USAFLS)\"  \nTo: Paul Cassell  >, Brad \nEdwards < \nCc: '   (USAFLS)\" < \nSubject: RE: Draft Protective Order - slight tweak \nDate: Fr"
+          }
+        },
+        {
+          "key": "PERSON|brad \nedwards|39",
+          "example": {
+            "text": "Brad \nEdwards",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 39,
+            "endChar": 52,
+            "position": 39,
+            "normalizedText": "brad \nedwards",
+            "context": "From: (USAFLS)\"  \nTo: Paul Cassell  >, Brad \nEdwards < \nCc: '   (USAFLS)\" < \nSubject: RE: Draft Protective Order - slight tweak \nDate: Fri, 15 Aug 2008 "
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|65",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 65,
+            "endChar": 71,
+            "position": 65,
+            "normalizedText": "usafls",
+            "context": "From: (USAFLS)\"  \nTo: Paul Cassell  >, Brad \nEdwards < \nCc: '   (USAFLS)\" < \nSubject: RE: Draft Protective Order - slight tweak \nDate: Fri, 15 Aug 2008 18:24:20 +0000 \nImp"
+          }
+        },
+        {
+          "key": "PERSON|cassell|232",
+          "example": {
+            "text": "Cassell",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 232,
+            "endChar": 239,
+            "position": 232,
+            "normalizedText": "cassell",
+            "context": "e: Fri, 15 Aug 2008 18:24:20 +0000 \nImportance: Normal \nAttachments: Protective_Order_v2.doc \nJudge Cassell and Brad, \nI have incorporated the change suggested by Judge Cassell to paragraph (c). I also added"
+          }
+        }
+      ],
+      "onlyLlmMention": [
+        {
+          "key": "PERSON|paul cassell|12",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "paul cassell",
+            "position": 12,
+            "entityText": "Paul Cassell",
+            "contextSnippet": "From: (USAFLS)\"  \nTo: Paul Cassell  >, Brad \nEdwards < \nCc: '   (USAFLS)\" < \nSubject: RE: Draft Protective Order - slight tw"
+          }
+        },
+        {
+          "key": "PERSON|brad edwards|36",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "brad edwards",
+            "position": 36,
+            "entityText": "Brad Edwards",
+            "contextSnippet": "From: (USAFLS)\"  \nTo: Paul Cassell  >, Brad \nEdwards < \nCc: '   (USAFLS)\" < \nSubject: RE: Draft Protective Order - slight tweak \nDate: Fri, 15 Aug 2"
+          }
+        },
+        {
+          "key": "PERSON|judge cassell|56",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "judge cassell",
+            "position": 56,
+            "entityText": "Judge Cassell",
+            "contextSnippet": "From: (USAFLS)\"  \nTo: Paul Cassell  >, Brad \nEdwards < \nCc: '   (USAFLS)\" < \nSubject: RE: Draft Protective Order - slight tweak \nDate: Fri, 15 Aug 2008 18:24:20 +0000 \nI"
+          }
+        },
+        {
+          "key": "PERSON|epstein|267",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "epstein",
+            "position": 267,
+            "entityText": "Epstein",
+            "contextSnippet": "\nImportance: Normal \nAttachments: Protective_Order_v2.doc \nJudge Cassell and Brad, \nI have incorporated the change suggested by Judge Cassell to paragraph (c). I also added language in paragraph (e), \nreferr"
+          }
+        },
+        {
+          "key": "PERSON|paul g. cassell|469",
+          "example": {
+            "type": "PERSON",
+            "normalizedText": "paul g. cassell",
+            "position": 469,
+            "entityText": "Paul G. Cassell",
+            "contextSnippet": "eferring to other victims, which also provides for petitioners' counsel to promptly provide a copy of the acknowledgment \nto the U.S. Attorney's Office. The government has no doubts that counsel for petitioners will"
+          }
+        }
+      ]
+    },
+    {
+      "file": {
+        "id": 96,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014135.pdf",
+        "filename": "EFTA00014135.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|united states district court \nsouthern district",
+        "PERSON|jane",
+        "ORGANIZATION|cause",
+        "ORGANIZATION|court",
+        "ORGANIZATION|the non-prosecution agreement"
+      ],
+      "onlyLlmEntity": [],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|united states district court \nsouthern district|0",
+          "example": {
+            "text": "UNITED STATES DISTRICT COURT \nSOUTHERN DISTRICT",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 0,
+            "endChar": 47,
+            "position": 0,
+            "normalizedText": "united states district court \nsouthern district",
+            "context": "UNITED STATES DISTRICT COURT \nSOUTHERN DISTRICT OF FLORIDA \nCase No. \n08-80736-Civ-Marra/Johnson \nIN RE JANE DOES 1 AND 2 \nORDER TO PRODUCE AND PRO"
+          }
+        },
+        {
+          "key": "PERSON|jane|104",
+          "example": {
+            "text": "JANE",
+            "type": "PERSON",
+            "spacyLabel": "PERSON",
+            "startChar": 104,
+            "endChar": 108,
+            "position": 104,
+            "normalizedText": "jane",
+            "context": "ED STATES DISTRICT COURT \nSOUTHERN DISTRICT OF FLORIDA \nCase No. \n08-80736-Civ-Marra/Johnson \nIN RE JANE DOES 1 AND 2 \nORDER TO PRODUCE AND PROTECTIVE ORDER \nTHIS CAUSE came before the Court on the Petiti"
+          }
+        },
+        {
+          "key": "ORGANIZATION|cause|167",
+          "example": {
+            "text": "CAUSE",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 167,
+            "endChar": 172,
+            "position": 167,
+            "normalizedText": "cause",
+            "context": ". \n08-80736-Civ-Marra/Johnson \nIN RE JANE DOES 1 AND 2 \nORDER TO PRODUCE AND PROTECTIVE ORDER \nTHIS CAUSE came before the Court on the Petitioners' Motion seeking the \nproduction of the Non-Prosecution Agr"
+          }
+        },
+        {
+          "key": "ORGANIZATION|court|189",
+          "example": {
+            "text": "Court",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 189,
+            "endChar": 194,
+            "position": 189,
+            "normalizedText": "court",
+            "context": "Johnson \nIN RE JANE DOES 1 AND 2 \nORDER TO PRODUCE AND PROTECTIVE ORDER \nTHIS CAUSE came before the Court on the Petitioners' Motion seeking the \nproduction of the Non-Prosecution Agreement between the Uni"
+          }
+        },
+        {
+          "key": "ORGANIZATION|the non-prosecution agreement|249",
+          "example": {
+            "text": "the Non-Prosecution Agreement",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 249,
+            "endChar": 278,
+            "position": 249,
+            "normalizedText": "the non-prosecution agreement",
+            "context": "CTIVE ORDER \nTHIS CAUSE came before the Court on the Petitioners' Motion seeking the \nproduction of the Non-Prosecution Agreement between the United States Attorney's \nOffice for the Southern District of Florida (hereinafter \"USA"
+          }
+        }
+      ],
+      "onlyLlmMention": []
+    },
+    {
+      "file": {
+        "id": 97,
+        "dataset": "dataset-8",
+        "filepath": "dataset-8/EFTA00014138.pdf",
+        "filename": "EFTA00014138.pdf"
+      },
+      "onlySpacyEntity": [
+        "ORGANIZATION|usafls"
+      ],
+      "onlyLlmEntity": [],
+      "onlySpacyMention": [
+        {
+          "key": "ORGANIZATION|usafls|11",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 11,
+            "endChar": 17,
+            "position": 11,
+            "normalizedText": "usafls",
+            "context": "From: '   (USAFLS)\"  \nTo: \nBcc: '   (USAFLS)\"  \nSubject: Re: Epstein \nDate: Fri, 21 Nov 2008 14:39:53 +0000 \nImportan"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|37",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 37,
+            "endChar": 43,
+            "position": 37,
+            "normalizedText": "usafls",
+            "context": "From: '   (USAFLS)\"  \nTo: \nBcc: '   (USAFLS)\"  \nSubject: Re: Epstein \nDate: Fri, 21 Nov 2008 14:39:53 +0000 \nImportance: Normal \n(USAFLS)\"  \nTh"
+          }
+        },
+        {
+          "key": "ORGANIZATION|usafls|130",
+          "example": {
+            "text": "USAFLS",
+            "type": "ORGANIZATION",
+            "spacyLabel": "ORG",
+            "startChar": 130,
+            "endChar": 136,
+            "position": 130,
+            "normalizedText": "usafls",
+            "context": ": '   (USAFLS)\"  \nSubject: Re: Epstein \nDate: Fri, 21 Nov 2008 14:39:53 +0000 \nImportance: Normal \n(USAFLS)\"  \nThanks. I'll be there in 15 minutes and I'll fill you in on what ound out. \nFrom: USAFLS) \nTo: "
+          }
+        }
+      ],
+      "onlyLlmMention": []
+    }
+  ]
+}

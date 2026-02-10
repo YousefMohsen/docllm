@@ -1,0 +1,1 @@
+If the mcp search returns a long answer, then add an extra step. Summerize. it should summerize each result into a shorter text, iterate, then return a final result based on the usmmeraazation

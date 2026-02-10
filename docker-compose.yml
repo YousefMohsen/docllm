@@ -1,0 +1,17 @@
+services:
+  postgres:
+    # pgvector-enabled Postgres (Phase 5: semantic search)
+    image: pgvector/pgvector:pg15
+    container_name: docllm-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: document_metadata
+    ports:
+      - "5433:5432"
+    volumes:
+      - docllm_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  docllm_postgres_data:

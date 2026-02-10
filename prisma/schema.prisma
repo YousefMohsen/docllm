@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model File {
+  id           Int      @id @default(autoincrement())
+  filename     String
+  filepath     String   @unique
+  dataset      String
+  fileType     String   @default("pdf") @map("file_type")
+  sizeBytes    BigInt   @map("size_bytes")
+  pageCount    Int      @map("page_count")
+  contentHash  String   @map("content_hash") @db.VarChar(64)
+  fullText     String?  @map("full_text") @db.Text
+  createdAt    DateTime @map("created_at")
+  modifiedAt   DateTime @map("modified_at")
+  processedAt  DateTime @default(now()) @map("processed_at")
+  status       String   @default("pending") @db.VarChar(20)
+  errorMessage String?  @map("error_message") @db.Text
+
+  entityMentions       EntityMention[]
+  entitiesExtracted    Boolean         @default(false) @map("entities_extracted")
+  entitiesExtractedAt  DateTime?       @map("entities_extracted_at")
+
+  chunks          DocumentChunk[]
+  chunksCreated   Boolean   @default(false) @map("chunks_created")
+  chunksCreatedAt DateTime? @map("chunks_created_at")
+
+  @@index([contentHash])
+  @@index([dataset])
+  @@index([status])
+  @@map("files")
+}
+
+model Entity {
+  id             Int              @id @default(autoincrement())
+  entityText     String           @map("entity_text")
+  entityType     String           @map("entity_type") @db.VarChar(20)
+  normalizedText String           @map("normalized_text")
+  mentions       EntityMention[]
+  createdAt      DateTime         @default(now()) @map("created_at")
+
+  @@unique([normalizedText, entityType])
+  @@index([entityType])
+  @@index([normalizedText])
+  @@map("entities")
+}
+
+model EntityMention {
+  id              Int      @id @default(autoincrement())
+  fileId          Int      @map("file_id")
+  entityId        Int      @map("entity_id")
+  pageNumber      Int?     @map("page_number")
+  contextSnippet  String   @map("context_snippet") @db.Text
+  mentionPosition Int?     @map("mention_position")
+  confidence      Float?   @default(1.0)
+  createdAt       DateTime @default(now()) @map("created_at")
+
+  file   File   @relation(fields: [fileId], references: [id], onDelete: Cascade)
+  entity Entity @relation(fields: [entityId], references: [id], onDelete: Cascade)
+
+  @@index([fileId])
+  @@index([entityId])
+  @@map("entity_mentions")
+}
+
+model DocumentChunk {
+  id         Int      @id @default(autoincrement())
+  fileId     Int      @map("file_id")
+  chunkIndex Int      @map("chunk_index")
+  chunkText  String   @map("chunk_text") @db.Text
+  pageNumber Int?     @map("page_number")
+  tokenCount Int?     @map("token_count")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  file File @relation(fields: [fileId], references: [id], onDelete: Cascade)
+
+  @@unique([fileId, chunkIndex])
+  @@index([fileId])
+  @@map("document_chunks")
+}

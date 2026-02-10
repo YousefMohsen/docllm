@@ -1,0 +1,569 @@
+{
+  "generatedAt": "2026-02-07T15:50:30.678Z",
+  "input": "/Users/yomo/projects/docllm/python/output/spacy-entities-20260207-163729.json",
+  "dataset": "dataset-8",
+  "extractedSpacy": [
+    {
+      "type": "LOCATION",
+      "text": "13:59:10"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Epstein"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Florida"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Lanna Belohlavek \nCc"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Lanna Belohlavek \nSent"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Miami"
+    },
+    {
+      "type": "LOCATION",
+      "text": "palm beach"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Palm Beach County"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Roy BLACK"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Roy BLACK\nBcc"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Roy BLACK \nCc"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Salt Lake CI"
+    },
+    {
+      "type": "LOCATION",
+      "text": "the Souhem District"
+    },
+    {
+      "type": "LOCATION",
+      "text": "the Southern District"
+    },
+    {
+      "type": "LOCATION",
+      "text": "the United States"
+    },
+    {
+      "type": "LOCATION",
+      "text": "U.S."
+    },
+    {
+      "type": "LOCATION",
+      "text": "United States"
+    },
+    {
+      "type": "LOCATION",
+      "text": "USA"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Utah"
+    },
+    {
+      "type": "LOCATION",
+      "text": "West Palm Beach"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Agreement"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "AUSA"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Brad Edwards"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Brad Edwards \nDate"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "CAUSE"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Chambers"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Columbia"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Court"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "FACSIMILE"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "FBI"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Government"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "JE"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Kirkland & Ellis International LLP"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Kirkland & Ellis LLP"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Ms."
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Non-Compliance"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Non-Compliance \nDate: Sat"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Non-Compliance \nDear Jack"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Non-Prosecution Agreement"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Notice of Non-Compliance"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Notice of Non-Compliance \nEFTA00014122\n\nDear Ms-"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Office"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Office \nPage Two"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "OMG"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "PBSO"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Petitioners"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Reeder & Reeder"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Rolando"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "Roy BLACK"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "SAO"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "State"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "the Federal Non-Prosecution"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "the Florida \nPublic Records Act"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "the Non-Prosecution Agreement"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "The Palm Beach Daily News"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "the Protective Order"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "UNITED STATES DISTRICT COURT \nSOUTHERN DISTRICT"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "USAFLS"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "USAO"
+    },
+    {
+      "type": "PERSON",
+      "text": "2CDE"
+    },
+    {
+      "type": "PERSON",
+      "text": "Acosta"
+    },
+    {
+      "type": "PERSON",
+      "text": "Alex"
+    },
+    {
+      "type": "PERSON",
+      "text": "Amy"
+    },
+    {
+      "type": "PERSON",
+      "text": "Amy Ederi \nSubject"
+    },
+    {
+      "type": "PERSON",
+      "text": "Barry Krischer"
+    },
+    {
+      "type": "PERSON",
+      "text": "Barry Krischer \nSubject"
+    },
+    {
+      "type": "PERSON",
+      "text": "Barry Krisher"
+    },
+    {
+      "type": "PERSON",
+      "text": "Belohlavek"
+    },
+    {
+      "type": "PERSON",
+      "text": "Blackberry"
+    },
+    {
+      "type": "PERSON",
+      "text": "Brad"
+    },
+    {
+      "type": "PERSON",
+      "text": "Brad \nEdwards"
+    },
+    {
+      "type": "PERSON",
+      "text": "Bradley Edwards"
+    },
+    {
+      "type": "PERSON",
+      "text": "Bryce Albu"
+    },
+    {
+      "type": "PERSON",
+      "text": "C. Bryce Albu"
+    },
+    {
+      "type": "PERSON",
+      "text": "Cassell"
+    },
+    {
+      "type": "PERSON",
+      "text": "CATHERINE W. EZELL"
+    },
+    {
+      "type": "PERSON",
+      "text": "Danchuk"
+    },
+    {
+      "type": "PERSON",
+      "text": "Edwards"
+    },
+    {
+      "type": "PERSON",
+      "text": "Epstein"
+    },
+    {
+      "type": "PERSON",
+      "text": "Goldberger"
+    },
+    {
+      "type": "PERSON",
+      "text": "GRANTED"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jack Goldbe"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jack Goldberger"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jack Goldberger's"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jane"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jay"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jay Lefkowitz"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jay Lefkowitz \nSubject"
+    },
+    {
+      "type": "PERSON",
+      "text": "jeffrey"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jeffrey Epstein"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jeffrey Epstein's"
+    },
+    {
+      "type": "PERSON",
+      "text": "KATHERINE W. EZELL"
+    },
+    {
+      "type": "PERSON",
+      "text": "Kathy"
+    },
+    {
+      "type": "PERSON",
+      "text": "KENNETH A. MARRA"
+    },
+    {
+      "type": "PERSON",
+      "text": "Martin Reeder \nSubject"
+    },
+    {
+      "type": "PERSON",
+      "text": "Messa"
+    },
+    {
+      "type": "PERSON",
+      "text": "Michael Danchuk"
+    },
+    {
+      "type": "PERSON",
+      "text": "Notification Letter"
+    },
+    {
+      "type": "PERSON",
+      "text": "Order"
+    },
+    {
+      "type": "PERSON",
+      "text": "Paul Cassell  >"
+    },
+    {
+      "type": "PERSON",
+      "text": "Paul G. Cassell"
+    },
+    {
+      "type": "PERSON",
+      "text": "Petitioner"
+    },
+    {
+      "type": "PERSON",
+      "text": "Petitioners"
+    },
+    {
+      "type": "PERSON",
+      "text": "Ronald M. Boyce"
+    },
+    {
+      "type": "PERSON",
+      "text": "Roy"
+    },
+    {
+      "type": "PERSON",
+      "text": "Roy BLACK"
+    },
+    {
+      "type": "PERSON",
+      "text": "Suite"
+    },
+    {
+      "type": "PERSON",
+      "text": "Thu Aug"
+    }
+  ],
+  "llmExtracted": [
+    {
+      "type": "LOCATION",
+      "text": "HOLLYWOOD, FLORIDA"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Palm Beach County"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Salt Lake CI"
+    },
+    {
+      "type": "LOCATION",
+      "text": "Southern District of Florida"
+    },
+    {
+      "type": "LOCATION",
+      "text": "UT"
+    },
+    {
+      "type": "LOCATION",
+      "text": "West Palm Beach"
+    },
+    {
+      "type": "LOCATION",
+      "text": "West Palm Beach, FL"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "FBI"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "PBSO"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "S. J. Quinney College of Law"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "U.S. Attorney"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "U.S. Attorney's Office"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "University of Utah"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "USA()"
+    },
+    {
+      "type": "ORGANIZATION",
+      "text": "USAO"
+    },
+    {
+      "type": "PERSON",
+      "text": "Amy Eden"
+    },
+    {
+      "type": "PERSON",
+      "text": "Brad Edwards"
+    },
+    {
+      "type": "PERSON",
+      "text": "Bradley Edwards"
+    },
+    {
+      "type": "PERSON",
+      "text": "CATHERINE W. EZELL"
+    },
+    {
+      "type": "PERSON",
+      "text": "Edwards"
+    },
+    {
+      "type": "PERSON",
+      "text": "Epstein"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jack Goldberger"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jane Doe #1"
+    },
+    {
+      "type": "PERSON",
+      "text": "Jeffrey Epstein"
+    },
+    {
+      "type": "PERSON",
+      "text": "Judge Cassell"
+    },
+    {
+      "type": "PERSON",
+      "text": "KATHERINE W. EZELL"
+    },
+    {
+      "type": "PERSON",
+      "text": "Michael Danchuk"
+    },
+    {
+      "type": "PERSON",
+      "text": "Mr. Epstein"
+    },
+    {
+      "type": "PERSON",
+      "text": "Paul Cassell"
+    },
+    {
+      "type": "PERSON",
+      "text": "Paul G. Cassell"
+    },
+    {
+      "type": "PERSON",
+      "text": "Ronald M. Boyce"
+    },
+    {
+      "type": "PERSON",
+      "text": "Roy BLACK"
+    }
+  ]
+}
