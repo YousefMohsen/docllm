@@ -374,25 +374,56 @@ async function main() {
             }
 
             for (const m of uniq) {
-              const entity = await tx.entity.upsert({
+              const existing = await tx.entity.findFirst({
                 where: {
-                  normalizedText_entityType: {
-                    normalizedText: m.normalizedText,
-                    entityType: m.entityType
-                  }
+                  normalizedText: m.normalizedText,
+                  entityType: m.entityType
                 },
-                create: {
-                  entityText: m.entityText,
-                  entityType: m.entityType,
-                  normalizedText: m.normalizedText
-                },
-                update: {}
+                select: { id: true }
               });
+
+              const entity =
+                existing ??
+                (await tx.entity.create({
+                  data: {
+                    entityText: m.entityText,
+                    entityType: m.entityType,
+                    normalizedText: m.normalizedText,
+                    canonicalText: m.entityText,
+                    aliases: [m.entityText],
+                    aliasFingerprints: [m.normalizedText],
+                    meta: {}
+                  },
+                  select: { id: true }
+                }));
+
+              const canonical = await tx.canonicalEntity.findFirst({
+                where: {
+                  entityType: m.entityType,
+                  canonicalNormalized: m.normalizedText
+                },
+                select: { id: true }
+              });
+              const canonicalEntityId =
+                canonical?.id ??
+                (
+                  await tx.canonicalEntity.create({
+                    data: {
+                      entityType: m.entityType,
+                      canonicalText: m.entityText,
+                      canonicalNormalized: m.normalizedText,
+                      meta: {}
+                    },
+                    select: { id: true }
+                  })
+                ).id;
 
               await tx.entityMention.create({
                 data: {
                   fileId: f.id,
                   entityId: entity.id,
+                  canonicalEntityId,
+                  aliasId: null,
                   pageNumber: null,
                   contextSnippet: m.contextSnippet,
                   mentionPosition: m.mentionPosition,

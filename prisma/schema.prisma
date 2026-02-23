@@ -42,12 +42,18 @@ model Entity {
   entityText     String           @map("entity_text")
   entityType     String           @map("entity_type") @db.VarChar(20)
   normalizedText String           @map("normalized_text")
+  canonicalText  String           @default("") @map("canonical_text")
+  aliases        Json             @default("[]")
+  aliasFingerprints Json          @default("[]") @map("alias_fingerprints")
+  meta           Json             @default("{}")
+  entityHash     String?          @map("entity_hash") @db.VarChar(128)
   mentions       EntityMention[]
   createdAt      DateTime         @default(now()) @map("created_at")
 
-  @@unique([normalizedText, entityType])
   @@index([entityType])
+  @@index([canonicalText])
   @@index([normalizedText])
+  @@index([entityType, normalizedText])
   @@map("entities")
 }
 
@@ -55,18 +61,83 @@ model EntityMention {
   id              Int      @id @default(autoincrement())
   fileId          Int      @map("file_id")
   entityId        Int      @map("entity_id")
+  canonicalEntityId Int    @map("canonical_entity_id")
+  aliasId         Int?     @map("alias_id")
+  mentionText     String?  @map("mention_text")
+  mentionNormalized String? @map("mention_normalized")
   pageNumber      Int?     @map("page_number")
   contextSnippet  String   @map("context_snippet") @db.Text
   mentionPosition Int?     @map("mention_position")
   confidence      Float?   @default(1.0)
   createdAt       DateTime @default(now()) @map("created_at")
 
-  file   File   @relation(fields: [fileId], references: [id], onDelete: Cascade)
-  entity Entity @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  file             File                @relation(fields: [fileId], references: [id], onDelete: Cascade)
+  entity           Entity              @relation(fields: [entityId], references: [id], onDelete: Cascade)
+  canonicalEntity  CanonicalEntity     @relation(fields: [canonicalEntityId], references: [id], onDelete: Cascade)
+  alias            EntityAlias?        @relation(fields: [aliasId], references: [id], onDelete: SetNull)
+  candidateLinks   EntityCandidateLink[]
 
   @@index([fileId])
   @@index([entityId])
+  @@index([canonicalEntityId])
+  @@index([aliasId])
+  @@index([mentionNormalized])
   @@map("entity_mentions")
+}
+
+model CanonicalEntity {
+  id                  Int                   @id @default(autoincrement())
+  entityType          String                @map("entity_type") @db.VarChar(20)
+  canonicalText       String                @map("canonical_text")
+  canonicalNormalized String                @map("canonical_normalized")
+  meta                Json                  @default("{}")
+  createdAt           DateTime              @default(now()) @map("created_at")
+  updatedAt           DateTime              @updatedAt @map("updated_at")
+  aliases             EntityAlias[]
+  mentions            EntityMention[]
+  candidateLinks      EntityCandidateLink[]
+
+  @@index([entityType, canonicalNormalized])
+  @@map("canonical_entities")
+}
+
+model EntityAlias {
+  id                Int               @id @default(autoincrement())
+  entityType        String            @map("entity_type") @db.VarChar(20)
+  canonicalEntityId Int               @map("canonical_entity_id")
+  aliasText         String            @map("alias_text")
+  aliasNormalized   String            @map("alias_normalized")
+  createdAt         DateTime          @default(now()) @map("created_at")
+  updatedAt         DateTime          @updatedAt @map("updated_at")
+  canonicalEntity   CanonicalEntity   @relation(fields: [canonicalEntityId], references: [id], onDelete: Cascade)
+  mentions          EntityMention[]
+
+  @@index([entityType, aliasNormalized])
+  @@unique([canonicalEntityId, aliasNormalized])
+  @@map("entity_aliases")
+}
+
+enum EntityCandidateStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+model EntityCandidateLink {
+  id                         Int                   @id @default(autoincrement())
+  mentionId                  Int                   @map("mention_id")
+  candidateCanonicalEntityId Int                   @map("candidate_canonical_entity_id")
+  score                      Float?
+  reason                     String                @db.Text
+  status                     EntityCandidateStatus @default(PENDING)
+  createdAt                  DateTime              @default(now()) @map("created_at")
+  updatedAt                  DateTime              @updatedAt @map("updated_at")
+  mention                    EntityMention         @relation(fields: [mentionId], references: [id], onDelete: Cascade)
+  candidateCanonicalEntity   CanonicalEntity       @relation(fields: [candidateCanonicalEntityId], references: [id], onDelete: Cascade)
+
+  @@unique([mentionId, candidateCanonicalEntityId])
+  @@index([status])
+  @@map("entity_candidate_links")
 }
 
 model DocumentChunk {

@@ -8,6 +8,7 @@
     "db:down": "docker compose down",
     "process": "tsx src/process.ts",
     "extract-entities": "tsx src/extractEntities.ts",
+    "extract-entities:canonical": "tsx src/extractEntitiesCanonical.ts",
     "create-embeddings": "tsx src/createEmbeddings.ts",
 
     "db:migrate": "prisma migrate dev",

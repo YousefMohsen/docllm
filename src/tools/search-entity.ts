@@ -49,13 +49,9 @@ export function registerSearchByEntityTool(server: any, prisma: PrismaClient) {
           | null = null;
 
         if (entityType) {
-          const found = await prisma.entity.findUnique({
-            where: {
-              normalizedText_entityType: {
-                normalizedText,
-                entityType
-              }
-            },
+          const found = await prisma.entity.findFirst({
+            where: { normalizedText, entityType },
+            orderBy: { id: "asc" },
             select: { id: true, entityText: true, entityType: true }
           });
           entity = found ?? null;
