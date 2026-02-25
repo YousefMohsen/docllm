@@ -1,115 +1,38 @@
 # Agent Notes (docllm)
 
-This repo is a local document ingestion pipeline:
+This repo is a document + entity pipeline for media-investigation style queries. Target: MCP server an LLM can call to ask “where is this person mentioned?”, “documents that mention A and B?”, etc.
 
-- Scan PDFs under `DOCUMENTS_PATH` (default `./documents`)
-- Extract text + metadata
-- Store into PostgreSQL (Docker) via Prisma
-- Phase 2: extract named entities via OpenAI into Postgres
-- Phase 3: MCP server exposing DB tools over stdio
-- Phase 4: PostgreSQL full-text search (tsvector + GIN + trigger)
-- Phase 5: semantic search (pgvector embeddings over document chunks)
+**Current state:** Prisma schema, migrations, docker-compose, and package.json are set up for the new approach. Ingest, entity extraction, chunking/embeddings, and MCP server scripts are **not** implemented yet (see `NEW_APPROACH.md` for the model; previous implementation is in `old/`).
+
+## Schema (new approach)
+
+- **File**: one row per document; `path` (unique, relative to docs root), `fullText`, `size`, `pageCount`, `summary`, optional `contentHash`.
+- **DocumentChunk**: RAG chunks per file; `content`, `chunkIndex`, optional `pageNumber`, `tokenCount`, `embedding` (pgvector).
+- **Entity**: canonical entity (person/location/organisation); `text`, `type`; text is **not** unique.
+- **EntityVariant**: spellings/aliases per entity; `(entityId, normalizedText)` unique.
+- **EntityMention**: links file (and optional chunk) to entity; indexes for “docs mentioning A and B” and per-file lookups.
 
 ## Quick commands
 
-- Start DB:
-
-```bash
-docker compose up -d
-```
-
-- Run migrations + generate client:
-
-```bash
-npx prisma migrate dev
-npx prisma generate
-```
-
-- Process documents (default mode = only new/changed):
-
-```bash
-npm run process
-```
-
-- Reprocess everything:
-
-```bash
-npm run process -- --reprocess=1
-```
-
-- Extract entities (default mode = only files not yet extracted):
- 
-```bash
-npm run extract-entities
-```
-
-- Re-extract entities for all processed files:
-
-```bash
-npm run extract-entities -- --reprocess=1
-```
-
-- Run MCP server (stdio):
-
-```bash
-# Dev (TypeScript)
-npm run mcp:dev
-
-# Build + start (compiled JS)
-npm run mcp:build
-npm run mcp:start
-```
-
-- Test FTS + MCP tools:
-
-```bash
-npm run search:test
-npm run mcp:test
-```
-
-- Create embeddings (Phase 5):
-
-```bash
-# Incremental (files without chunks/embeddings)
-npm run create-embeddings
-
-# Re-embed everything
-npm run create-embeddings -- --reprocess=1
-```
+- Start DB: `docker compose up -d`
+- Migrate + generate client: `npm run db:migrate` then `npm run db:generate` (or `npx prisma migrate dev` / `npx prisma generate`). If the DB already has the **old** schema (e.g. from before the new approach), use a fresh DB: `docker compose down -v`, then `npm run db:up`, then `npx prisma migrate deploy`.
+- DB UI: `npm run db:studio`
 
 ## Important details
 
-- **Database port**: container `5432` is published to host **`5433`** (see `docker-compose.yml`). The `.env.example` `DATABASE_URL` uses `127.0.0.1:5433`.
-- **File identity**:
-  - `dataset` is the first folder under `DOCUMENTS_PATH` (e.g. `documents/dataset-8/...` → `dataset-8`)
-  - `filepath` stored in DB is **relative to `DOCUMENTS_PATH`** (POSIX-like, e.g. `dataset-8/EFTA00014114.pdf`)
-- **Change detection**: SHA-256 of bytes stored in `contentHash`.
-- **Skip behavior** (default mode): if a DB row exists for `filepath` and `contentHash` matches, the file is skipped.
-- **Error handling**: failures are recorded with `status='failed'` and `errorMessage`; processing continues with other files.
-- **Full-text search**:
-  - Phase 4 adds `files.full_text_tsv` + GIN index + trigger for ranked Postgres FTS.
-  - `search_files` falls back to substring search if the FTS column isn't present yet.
-- **Entity extraction tracking**: `File.entitiesExtracted` / `File.entitiesExtractedAt` indicate whether Phase 2 has been run successfully for a file.
-- **Semantic search**:
-  - Phase 5 adds `document_chunks` with `embedding vector(1536)` (pgvector) and an ivfflat index.
-  - `semantic_search` sets `ivfflat.probes` (default: \(topK * 10\)) to avoid empty/low-recall results on small datasets. You can override via `IVFFLAT_PROBES`.
+- **Database port**: container `5432` → host **`5433`** (see `docker-compose.yml`). `.env.example` uses `127.0.0.1:5433`.
+- **Path**: File identity is `path` (e.g. `dataset-8/report.pdf`), relative to `DOCUMENTS_PATH`. No separate dataset/filename columns.
+- **Old code**: `old/` contains the previous schema, migrations, and src (process, extract-entities, MCP, etc.). See `old/README.md`.
 
 ## Where things live
 
-- `src/process.ts`: main ingestion CLI.
-- `src/extractEntities.ts`: Phase 2 entity extraction CLI.
-- `src/createEmbeddings.ts`: Phase 5 chunking + embedding CLI.
-- `src/mcp-server.ts`: Phase 3 MCP server entrypoint (stdio).
-- `src/tools/*`: MCP tool implementations.
-- `src/tools/semantic-search.ts`: Phase 5 MCP semantic search tool.
-- `src/utils/search.ts`: ranked full-text search helper (FTS with fallback).
-- `src/utils/embeddings.ts`: chunking + OpenAI embeddings helpers.
-- `prisma/schema.prisma`: database schema (`File` model → `files` table).
-- `docker-compose.yml`: local Postgres + volume.
-- `.env.example`: required env vars (`DATABASE_URL`, `DOCUMENTS_PATH`).
+- `prisma/schema.prisma`: new schema (File, DocumentChunk, Entity, EntityVariant, EntityMention).
+- `prisma/migrations/`: migrations for new approach (pgvector enabled).
+- `NEW_APPROACH.md`: full design (indexes, constraints, pipeline).
+- `docker-compose.yml`: Postgres + pgvector.
+- `.env.example`: `DATABASE_URL`, `DOCUMENTS_PATH` (and optional vars for future scripts).
 
 ## Safety / hygiene
 
 - Don’t commit secrets: `.env` is gitignored.
-- Prefer Prisma migrations (already enabled) for schema changes.
-
+- Use Prisma migrations for schema changes.

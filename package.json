@@ -2,39 +2,28 @@
   "name": "docllm",
   "version": "0.1.0",
   "private": true,
-  "description": "Document metadata extraction system (PDF -> Postgres via Prisma).",
+  "description": "Document + entity pipeline; MCP for media-investigation queries.",
   "scripts": {
     "db:up": "docker compose up -d",
     "db:down": "docker compose down",
-    "process": "tsx src/process.ts",
-    "extract-entities": "tsx src/extractEntities.ts",
-    "extract-entities:canonical": "tsx src/extractEntitiesCanonical.ts",
-    "create-embeddings": "tsx src/createEmbeddings.ts",
-
     "db:migrate": "prisma migrate dev",
     "db:generate": "prisma generate",
     "db:studio": "prisma studio",
-
-    "mcp:build": "tsc",
-    "mcp:dev": "tsx src/mcp-server.ts",
-    "mcp:start": "node dist/mcp-server.js",
-
-    "search:test": "tsx src/test-search.ts",
-    "mcp:test": "tsx src/test-mcp-tools.ts",
-
-    "semantic:test": "tsx src/test-semantic-search.ts"
+    "process_documents": "tsx src/process_documents.ts",
+    "chunk_documents": "tsx src/chunk_documents.ts",
+    "create_chunk_embeddings": "tsx src/create_chunk_embeddings.ts",
+    "run_pipeline": "npm run process_documents && npm run chunk_documents && npm run create_chunk_embeddings",
+    "print_first_embeddings": "tsx scripts/print_first_embeddings.ts"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.0.0",
     "@prisma/client": "^6.0.0",
-    "commander": "^14.0.0",
-    "dotenv": "^17.0.0",
-    "pdf-parse": "^1.1.1",
-    "zod": "^4.0.0"
+    "commander": "^14.0.3",
+    "dotenv": "^17.3.1",
+    "pdf-parse": "^2.4.5"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
-    "@types/pdf-parse": "^1.1.4",
+    "@types/pdf-parse": "^1.1.5",
     "prisma": "^6.0.0",
     "tsx": "^4.20.0",
     "typescript": "^5.8.0"
